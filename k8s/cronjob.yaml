@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: reminder-notification-cron
+spec:
+  schedule: "0 */1 * * *" # Run every hour
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: reminder-sender
+            image: 503698126220.dkr.ecr.us-east-1.amazonaws.com/notionx-reminders:manual-v1 # Placeholder
+            envFrom:
+            - secretRef:
+                name: notionx-secrets
+          restartPolicy: OnFailure
