@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: reminder-sender
-            image: 503698126220.dkr.ecr.us-east-1.amazonaws.com/notionx-reminders:manual-v1 # Placeholder
+            image: 503698126220.dkr.ecr.us-east-1.amazonaws.com/notionx-reminders:latest # Placeholder
             envFrom:
             - secretRef:
                 name: notionx-secrets
